@@ -14,6 +14,7 @@ startbtn.addEventListener('click', function(){
 })
 stopbtn.addEventListener('click', function(){
     condition=false;
+    stopbtn.innerHTML='Resume';
 })
 rebtn.addEventListener('click', function(){
     condition=false;

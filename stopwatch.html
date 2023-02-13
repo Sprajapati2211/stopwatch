@@ -5,19 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./stopwatch.css">
 </head>
 <body>
-    <span id="h" >00</span>
-    <span>hour :</span>
-    <span id="mi">00</span>
-    <span>minute :</span>
-    <span id="s">00</span>
-    <span>second .</span>
-    <span id="mis">00</span>
-    <span>millisecond</span>
-    <button id="start">start</button>
-    <button id="stop">stop</button>
-    <button id="re">reset</button>
-    <script src="./stopwatch.js"></script>
+    <main>
+        <div id="stopwatch-main">
+            <div>
+                <h2>Stopwatch</h2>
+            </div>
+            <div id="timer">
+             
+                <h1 id="h" >00</h1>
+            <p>hour <h1>:</h1></p>
+            <h1 id="mi">00</h1>
+            <p>minute <h1>:</h1></p>
+            <h1 id="s">00</h1>
+            <p>second <h1>.</h1></p>
+            <h1 id="mis">00</h1>
+            <p>millisecond</p>
+            </div>
+            <div id="btn-grp">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="re">Reset</button>
+            </div>
+            </div>
+            <script src="./stopwatch.js"></script>
+    </main>
 </body>
 </html>

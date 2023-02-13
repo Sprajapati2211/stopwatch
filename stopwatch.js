@@ -8,16 +8,20 @@ let condition=false;
 let min=0;
  let sec=0;
 let ms=0;
-startbtn.addEventListener('click', function(){
-    condition=true;
+startbtn.onclick=function(){
+    condition=0;
     stopwatch();
-})
-stopbtn.addEventListener('click', function(){
-    condition=false;
-    stopbtn.innerHTML='Resume';
-})
+    startbtn.disabled=true;
+}
+    stopbtn.addEventListener('click', function(){
+        condition=1;
+       stopwatch();
+       
+       
+    })
+
 rebtn.addEventListener('click', function(){
-    condition=false;
+    condition=2;
     hr=0;
     min=0;
     sec=0;
@@ -26,11 +30,14 @@ document.getElementById('h').innerHTML='0'+hr;
 document.getElementById('mi').innerHTML='0'+min;
 document.getElementById('s').innerHTML='0'+sec;
 document.getElementById('mis').innerHTML='0'+ms;
+stopwatch();
+
 })
 function stopwatch(){
-    if(condition){
+    if(condition==0){
+        
     ms++;
- if(ms==101){
+ if(ms==100){
     sec++;
     ms=0;
 
@@ -42,8 +49,8 @@ function stopwatch(){
     min=0;
     sec=0;
 }
-//setTimeout(stopwatch,1000);
-setTimeout(stopwatch,10)
+
+setTimeout(stopwatch,10);
 
 
 let hrstr=hr;
@@ -66,5 +73,17 @@ document.getElementById('h').innerHTML=hrstr;
 document.getElementById('mi').innerHTML=minstr;
 document.getElementById('s').innerHTML=secstr;
 document.getElementById('mis').innerHTML=millistr;
+
+}else if(condition==1){
+    startbtn.disabled=false;
+    startbtn.innerHTML='Resume';
+   
+    
+}else if(condition==2){
+    startbtn.disabled=false;
+    startbtn.innerHTML='Start';
+    stopbtn.innerHTML='Stop';
+    
 }
+
 }
